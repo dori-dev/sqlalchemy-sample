@@ -46,3 +46,14 @@ s1 = Student(name='ali')
 s2 = Student(name='saman')
 # session.add_all([s1, s2])
 # session.commit()
+
+
+# delete
+
+student = session.query(Student).filter(Student.name == 'saman').delete()
+
+
+# update
+session.query(Student).filter(Student.name == 'mohammad').update(
+    {'name': 'mmd'},
+)

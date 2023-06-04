@@ -11,15 +11,15 @@ session = sessionmaker(bind=engine)()
 
 class Student(base):
     __tablename__ = 'student'
-    id = Column('id', Integer, unique=True, primary_key=True)
-    name = Column('name', String(50))
+    id = Column(Integer, unique=True, primary_key=True)
+    name = Column(String(50))
     classroom_id = Column('classroom_id', Integer, ForeignKey('classroom.id'))
 
 
 class ClassRoom(base):
     __tablename__ = 'classroom'
-    id = Column('id', Integer, unique=True, primary_key=True)
-    name = Column('name', String(50))
+    id = Column(Integer, unique=True, primary_key=True)
+    name = Column(String(50))
     students = relationship('Student', backref='classroom')
 
 

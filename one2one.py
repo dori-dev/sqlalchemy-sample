@@ -11,15 +11,15 @@ session = sessionmaker(bind=engine)()
 
 class Country(base):
     __tablename__ = 'country'
-    id = Column('id', Integer, unique=True, primary_key=True)
-    name = Column('name', String(50))
+    id = Column(Integer, unique=True, primary_key=True)
+    name = Column(String(50))
     capital = relationship('Capital', backref='country', uselist=False)
 
 
 class Capital(base):
     __tablename__ = 'capital'
-    id = Column('id', Integer, unique=True, primary_key=True)
-    name = Column('name', String(50))
+    id = Column(Integer, unique=True, primary_key=True)
+    name = Column(String(50))
     country_id = Column('country_id', Integer, ForeignKey('country.id'))
 
 

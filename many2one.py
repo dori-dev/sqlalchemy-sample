@@ -13,7 +13,7 @@ class Student(base):
     __tablename__ = 'student'
     id = Column(Integer, unique=True, primary_key=True)
     name = Column(String(50))
-    classroom_id = Column('classroom_id', Integer, ForeignKey('classroom.id'))
+    classroom_id = Column(Integer, ForeignKey('classroom.id'))
 
 
 class ClassRoom(base):
